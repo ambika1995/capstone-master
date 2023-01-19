@@ -1,9 +1,7 @@
 package com.alchemy.capstone.core.models;
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.annotation.PostConstruct;
-
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
@@ -27,13 +25,15 @@ public class HomeBannerModel {
     public void init() {
         if(articleLinks != null) {
             bannerList = new ArrayList<>();
-            for(String articleLinks : articleLinks) {
-                Resource articleResource = resolver.getResource(articleLinks+"/jcr:content/root/container/article_banner");
+            for(String articleLink : articleLinks) {
+                Resource articleResource = resolver.getResource(articleLink+"/jcr:content/root/container/article_banner");
                 if(articleResource != null) {
                     ArticleBannerModel articleBanner = articleResource.adaptTo(ArticleBannerModel.class);
                     if(articleBanner != null) {
-                        articleBanner.setPagePath(articleLinks);
-                        bannerList.add(articleBanner);
+                        articleBanner.setPagePath(articleLink);
+                        if(bannerList.size() < 5) {
+                            bannerList.add(articleBanner);
+                        }
                     }
                 }
             }
@@ -44,5 +44,7 @@ public class HomeBannerModel {
         return bannerList;
     }
 
-    
+    public String[] getArticleLinks() {
+        return articleLinks;
+    }
 }

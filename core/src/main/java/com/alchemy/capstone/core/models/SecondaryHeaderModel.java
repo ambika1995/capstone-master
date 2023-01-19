@@ -27,7 +27,4 @@ public class SecondaryHeaderModel {
     public Boolean getDisplayLanguages() {
         return displayLanguages;
     }
-
-    
-    
 }

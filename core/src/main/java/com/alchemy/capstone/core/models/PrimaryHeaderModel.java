@@ -1,10 +1,7 @@
 package com.alchemy.capstone.core.models;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
 import javax.annotation.PostConstruct;
-
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
@@ -37,6 +34,4 @@ public class PrimaryHeaderModel {
     public String getTodayDateStr() {
         return todayDateStr;
     }
-
-    
 }

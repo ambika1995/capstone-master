@@ -20,7 +20,4 @@ public class FooterModel {
     public String getAboutText() {
         return aboutText;
     }
-
-
-    
 }
