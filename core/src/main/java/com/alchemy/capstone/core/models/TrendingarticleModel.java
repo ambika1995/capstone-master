@@ -8,6 +8,12 @@ import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import com.alchemy.capstone.core.services.TrendingArticleService;
 
+/**
+ *      @author Ambika
+ * 
+ *      Sling Model to fetch Trending Articles Component properties
+ *
+ */
 @Model(adaptables = {Resource.class},defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class TrendingarticleModel {
 

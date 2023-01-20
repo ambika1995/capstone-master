@@ -7,6 +7,13 @@ import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
+/**
+ *      @author Ambika
+ * 
+ *      Sling Model to fetch Header Primary Component properties
+ *
+ */
+
 @Model(adaptables = Resource.class,defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class PrimaryHeaderModel {
     @ValueMapValue
